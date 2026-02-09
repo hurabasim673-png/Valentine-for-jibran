@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+body {
+    margin:0;
+    padding:0;
+    font-family:'Comic Sans MS', cursive, sans-serif;
+    background:#ffc0cb;
+    cursor:none;
+    overflow:hidden;
+}
+
+/* Pages */
+.page{
+    display:none;
+    width:100vw;
+    height:100vh;
+    text-align:center;
+    padding-top:15vh;
+    opacity:0;
+    transition:opacity 1s ease;
+}
+.active{ display:block; opacity:1; }
+
+/* Text */
+h1{ font-size:3em; color:#ff0066; }
+p{ font-size:1.2em; color:#330033; line-height:1.5em; margin:20px; }
+a{ color:#ff0066; text-decoration:underline; }
+
+/* Buttons */
+.btn{
+    font-size:1.5em;
+    padding:12px 35px;
+    margin:20px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff66b2,#ff3399,#ff66b2);
+    color:white;
+    animation:bounce 1s infinite alternate;
+}
+.btn:hover{ transform:scale(1.2);}
+@keyframes bounce{0%{transform:translateY(0);}100%{transform:translateY(-10px);}}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:red;
+    transform:rotate(-45deg);
+    animation:fly 5s linear infinite;
+    z-index:0;
+}
+.heart::before,.heart::after{
+    content:'';
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:red;
+    border-radius:50%;
+}
+.heart::before{ top:-12px; left:0;}
+.heart::after{ left:12px; top:0;}
+@keyframes fly{0%{transform:translateY(100vh) rotate(-45deg);opacity:1;}100%{transform:translateY(-100vh) rotate(-45deg);opacity:0;}}
+
+/* Letter animation */
+.letter{
+    width:90%;
+    max-width:400px;
+    background:#fff0f5;
+    border:3px solid #ff66b2;
+    border-radius:15px;
+    margin:20px auto;
+    overflow:hidden;
+    transform:rotateX(90deg);
+    transform-style:preserve-3d;
+    transition:transform 1s ease;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.letter.open{ transform:rotateX(0deg); animation:bounceLetter 0.5s ease; }
+@keyframes bounceLetter{0%{transform:rotateX(0deg) scale(0.9);}50%{transform:rotateX(0deg) scale(1.05);}100%{transform:rotateX(0deg) scale(1);}}
+.letter-content{opacity:0; transition:opacity 1s ease 0.5s; padding:20px;}
+.letter.open .letter-content{opacity:1;}
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    background:yellow;
+    z-index:9999;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+body {
+    margin:0;
+    padding:0;
+    font-family:'Comic Sans MS', cursive, sans-serif;
+    background:#ffc0cb;
+    cursor:none;
+    overflow:hidden;
+}
+
+/* Pages */
+.page{
+    display:none;
+    width:100vw;
+    height:100vh;
+    text-align:center;
+    padding-top:15vh;
+    opacity:0;
+    transition:opacity 1s ease;
+}
+.active{ display:block; opacity:1; }
+
+/* Text */
+h1{ font-size:3em; color:#ff0066; }
+p{ font-size:1.2em; color:#330033; line-height:1.5em; margin:20px; }
+a{ color:#ff0066; text-decoration:underline; }
+
+/* Buttons */
+.btn{
+    font-size:1.5em;
+    padding:12px 35px;
+    margin:20px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff66b2,#ff3399,#ff66b2);
+    color:white;
+    animation:bounce 1s infinite alternate;
+}
+.btn:hover{ transform:scale(1.2);}
+@keyframes bounce{0%{transform:translateY(0);}100%{transform:translateY(-10px);}}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:red;
+    transform:rotate(-45deg);
+    animation:fly 5s linear infinite;
+    z-index:0;
+}
+.heart::before,.heart::after{
+    content:'';
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:red;
+    border-radius:50%;
+}
+.heart::before{ top:-12px; left:0;}
+.heart::after{ left:12px; top:0;}
+@keyframes fly{0%{transform:translateY(100vh) rotate(-45deg);opacity:1;}100%{transform:translateY(-100vh) rotate(-45deg);opacity:0;}}
+
+/* Letter animation */
+.letter{
+    width:90%;
+    max-width:400px;
+    background:#fff0f5;
+    border:3px solid #ff66b2;
+    border-radius:15px;
+    margin:20px auto;
+    overflow:hidden;
+    transform:rotateX(90deg);
+    transform-style:preserve-3d;
+    transition:transform 1s ease;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.letter.open{ transform:rotateX(0deg); animation:bounceLetter 0.5s ease; }
+@keyframes bounceLetter{0%{transform:rotateX(0deg) scale(0.9);}50%{transform:rotateX(0deg) scale(1.05);}100%{transform:rotateX(0deg) scale(1);}}
+.letter-content{opacity:0; transition:opacity 1s ease 0.5s; padding:20px;}
+.letter.open .letter-content{opacity:1;}
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    background:yellow;
+    z-index:9999;
+    pointer-events:none;
+    animation:confetti-fall linear forwards;
+}
+@keyframes confetti-fall{0%{transform:translateY(-10px) rotate(0deg);}100%{transform:translateY(110vh) rotate(360deg);}}
+</style>
+</head>
+<body>
+
+<!-- Page 1 -->
+<div id="page1" class="page active">
+    <h1>Good Morning Bby 💖🎀</h1>
+    <button class="btn" onclick="nextPage(2)">Next</button>
+</div>
+
+<!-- Page 2 -->
+<div id="page2" class="page">
+    <h1>Jibran, Will You Be My Valentine!? 🥺</h1>
+    <button class="btn" onclick="yesClicked()">Yes</button>
+    <button class="btn" onclick="noClicked()">No</button>
+</div>
+
+<!-- Page 3 -->
+<div id="page3" class="page">
+    <div class="letter open">
+        <div class="letter-content">
+            <p id="letterText"></p>
+        </div>
+    </div>
+    <button class="btn" onclick="nextPage(4)">Next</button>
+</div>
+
+<!-- Page 4 -->
+<div id="page4" class="page">
+    <h1>Goodbye & Advance Happy Valentine's Day! 💖🌹💌</h1>
+</div>
+
+<script>
+// Floating hearts
+function createHearts(){
+    for(let i=0;i<30;i++){
+        let h=document.createElement('div');
+        h.classList.add('heart');
+        h.style.left=Math.random()*100+'vw';
+        h.style.animationDuration=(3+Math.random()*5)+'s';
+        document.body.appendChild(h);
+    }
+}
+createHearts();
+document.addEventListener('mousemove', e=>{
+    let h=document.createElement('div');
+    h.classList.add('heart');
+    h.style.left=e.pageX+'px';
+    h.style.top=e.pageY+'px';
+    h.style.width=h.style.height='15px';
+    h.style.animation='fly 3s linear forwards';
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),3000);
+});
+
+// Page navigation
+function nextPage(n){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page'+n).classList.add('active');
+    if(n===3) typeLetter();
+}
+
+// Yes/No buttons
+function yesClicked(){ launchConfetti(); nextPage(3); }
+function noClicked(){ alert("Aww bby 😔, that's not cute! Try again 💖"); }
+
+// Confetti
+function launchConfetti(){
+    for(let i=0;i<100;i++){
+        let c=document.createElement('div');
+        c.classList.add('confetti');
+        c.style.left=Math.random()*100+'vw';
+        c.style.background=['#ff3366','#ffcc33','#66ff66','#33ccff'][Math.floor(Math.random()*4)];
+        c.style.animationDuration=(2+Math.random()*2)+'s';
+        c.style.width=c.style.height=(5+Math.random()*10)+'px';
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),3000);
+    }
+}
+
+// Letter typing animation for page 3
+const letterLines=[
+    "Tyssmm mele cutu hubby 💖 I really really love you more than anything! 😘",
+    "I'm very lucky to have you in my life.",
+    "Mare bachy, ik hamare distance ki waja se hum AK sath nahi hai,",
+    "but believe me, in sha Allah, AK dik ap or ma hamesha ke liye AK ho jayenge. 🥰",
+    "Is liye Valentine per kisi couple ko dekh kar sad nahi ho, oka that's like my boy 💕❤️💌."
+];
+
+function typeLetter(){
+    const p=document.getElementById('letterText'); p.innerHTML='';
+    let lineIndex=0;
+    function typeLine(){
+        if(lineIndex<letterLines.length){
+            let line=letterLines[lineIndex]; let charIndex=0;
+            function typeChar(){
+                if(charIndex<line.length){
+                    p.innerHTML+=line[charIndex];
+                    charIndex++;
+                    setTimeout(typeChar,30);
+                }else{ p.innerHTML+='<br>'; lineIndex++; setTimeout(typeLine,300); }
+            }
+            typeChar();
+        }
+    }
+    typeLine();
+}
+</script>
+</body>
+</html>
